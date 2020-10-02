@@ -13,20 +13,29 @@
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A   *
  * PARTICULAR PURPOSE. See the GNU General Public License for more details.          *
  *************************************************************************************/
-
-
 #pragma once
 #include "tensor.h"
 
-template<typename T>
-class vector : public tensor<T, 2>
-{
-public:
-	vector()= default;
 
-	//
-	T norm2();
-	T norm_inf();
+	template<typename T, size_t Len>
+	class vector : public tensor<T, 2>
+	{
+	public:
+		vector();
+		vector(std::array<size_t, 2>);
+		//
+		T norm2();
+		T norm_inf();
 
-	
-};
+
+	};
+
+	template<typename T, size_t Len>
+	inline vector<T, Len>::vector(): tensor<T, 2>{{Len, 1}}
+	{
+	}
+
+	template<typename T, size_t Len>
+	inline vector<T, Len>::vector(std::array<size_t, 2>)
+	{
+	}
