@@ -27,49 +27,53 @@
 	class tensor
 	{
 	public:
-
 		tensor() = default;
-		virtual tensor(std::array<size_t, Dim>) override;
+		tensor(std::array<size_t, Dim>);
+		
+		virtual tensor<T, Dim>& operator=(const tensor<T, Dim>&);
+		virtual ~tensor() = default;
 
 		//Set certain properties
-		void reshape(std::array<size_t, Dim>);
+		
 
 		//Element acces to 2-Dim and 3-Dim tensors
-		virtual  int& at(size_t, size_t);
-		virtual  int& at(size_t, size_t, size_t);
+		/*
+		virtual T& at(size_t) = 0;
+		virtual  T& at(size_t, size_t);
+		virtual  T& at(size_t, size_t, size_t);*/
 
 		//Get data
-		void shape(std::array<size_t, Dim>&) const;
+		
 
 		//Get to see something
-		virtual void show();
+		
 
 		//Tensor operators
-		tensor<T, Dim> operator+(const tensor<T, Dim>&) const;
-		tensor<T, Dim> operator-(const tensor<T, Dim>&) const;
-
-		virtual tensor<T, Dim> operator*(const tensor<T, Dim>&) const;
+		virtual tensor<T, Dim> operator+(const tensor<T, Dim>&) const;
+		virtual tensor<T, Dim> operator-(const tensor<T, Dim>&) const;
+		//virtual tensor<T, Dim> operator*(const tensor<T, Dim>&) const;
 
 		//Element-wise operators
-		tensor<T, Dim> operator+(const T&) const;
-		tensor<T, Dim> operator-(const T&) const;
-		tensor<T, Dim> operator*(const T&) const;
-		tensor<T, Dim> operator/(const T&) const;
+		virtual tensor<T, Dim> operator+(const T&) const;
+		virtual	tensor<T, Dim> operator-(const T&) const;
+		virtual tensor<T, Dim> operator*(const T&) const;
+		virtual tensor<T, Dim> operator/(const T&) const;
 
 		//It is possible to pass a list to a tensor, right now you may have to reshape it afterwards TODO
-		void operator=(const std::list<T>& Right);
+		virtual void operator=(const std::list<T>& Right);
+
 
 		//Linear algebra operations
-		virtual void transpose();
+		/*virtual void transpose();
 		virtual void transposec();
 		virtual T norm2();
-		virtual T norm_inf();
+		virtual T norm_inf();*/
 
 
 
 
 	protected:
-		virtual ~tensor() = default;
+		
 		//Shape of the tensor and the data stored in it.
 		std::array<size_t, Dim> shape_;
 		std::list<T> data;
@@ -83,21 +87,34 @@
 	}
 
 	template<typename T, size_t Dim>
+	inline tensor<T, Dim>& tensor<T, Dim>::operator=(const tensor<T, Dim>& rhs)
+	{
+		//assert the shapes
+		this->data = rhs.data;
+		this->shape_ = rhs.shape_;
+		return *this;
+	}
+
+	template<typename T, size_t Dim>
 	inline void tensor<T, Dim>::operator=(const std::list<T>& Right)
 	{
 
 		if (Right.size() != this->data.size())
 			assert(Right.size());
-		else
+		else {
 			this->data = Right;
+		}
+
 
 
 	}
 
 
 
-	template<typename T, size_t Dim>
-	inline int& tensor<T, Dim>::at(size_t i, size_t j)
+	
+
+	/*template<typename T, size_t Dim>
+	inline T& tensor<T, Dim>::at(size_t i, size_t j)
 	{
 		assert(!data.empty());
 		assert(Dim == 2);
@@ -108,16 +125,16 @@
 
 
 	}
-
+	
 	template<typename T, size_t Dim>
-	inline  int& tensor<T, Dim>::at(size_t i, size_t j, size_t k)
+	inline  T& tensor<T, Dim>::at(size_t i, size_t j, size_t k)
 	{
 		assert(Dim == 3);
 		typename std::list<T>::iterator it = data.begin();
 		std::advance(it, (k - 1) * shape_[0] * shape_[1] + shape_[1] * (i - 1) + j - 1);
 		return (*it);
 	}
-
+	*/
 
 	template<typename T, size_t Dim>
 	inline tensor<T, Dim> tensor<T, Dim>::operator+(const tensor<T, Dim>& right) const
@@ -134,7 +151,7 @@
 	}
 
 	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator-(const tensor<T, Dim>&) const
+	inline tensor<T, Dim> tensor<T, Dim>::operator-(const tensor<T, Dim>& right) const
 	{
 		tensor<T, Dim> temp = *this;
 		assert(shape_ == right.shape_);
@@ -159,7 +176,7 @@
 	}
 
 	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator-(const T&) const
+	inline tensor<T, Dim> tensor<T, Dim>::operator-(const T& val) const
 	{
 		tensor<T, Dim> temp = *this;
 		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
@@ -168,7 +185,7 @@
 	}
 
 	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator*(const T&) const
+	inline tensor<T, Dim> tensor<T, Dim>::operator*(const T& val) const
 	{
 		tensor<T, Dim> temp = *this;
 		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
@@ -177,7 +194,7 @@
 	}
 
 	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator/(const T&) const
+	inline tensor<T, Dim> tensor<T, Dim>::operator/(const T& val) const
 	{
 		tensor<T, Dim> temp = *this;
 		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
