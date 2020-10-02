@@ -15,18 +15,10 @@
  *************************************************************************************/
 
 
+
 #pragma once
-#include "tensor.h"
 
-template<typename T>
-class vector : public tensor<T, 2>
+class matrix : private tensor
 {
-public:
-	vector()= default;
 
-	//
-	T norm2();
-	T norm_inf();
-
-	
 };
