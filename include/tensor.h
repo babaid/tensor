@@ -69,7 +69,8 @@
 		virtual T norm2();
 		virtual T norm_inf();*/
 
-
+		
+		
 
 
 	protected:
@@ -113,18 +114,7 @@
 
 	
 
-	/*template<typename T, size_t Dim>
-	inline T& tensor<T, Dim>::at(size_t i, size_t j)
-	{
-		assert(!data.empty());
-		assert(Dim == 2);
-		typename std::list<T>::iterator it = data.begin();
-		std::advance(it, (i - 1) * shape_[1] + j - 1);
-
-		return (*it);
-
-
-	}
+	/*
 	
 	template<typename T, size_t Dim>
 	inline  T& tensor<T, Dim>::at(size_t i, size_t j, size_t k)

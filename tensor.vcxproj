@@ -143,6 +143,9 @@
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\exceptions\exceptions.h" />
+    <ClInclude Include="include\matrix.h" />
+    <ClInclude Include="include\operations.h" />
     <ClInclude Include="include\tensor.h" />
     <ClInclude Include="include\vector.h" />
   </ItemGroup>

@@ -19,11 +19,40 @@
 #pragma once
 #include "tensor.h"
 
+
 template<typename T>
-class matrix : private tensor<T, 2>
+class matrix : public tensor<T, 2>
 {
-	matrix() = deafult;
+	public:
+	matrix() = default;
 	matrix(size_t, size_t);
-	matrix(matrix&&) = default;
-	matrix(matrix&) = default;
+	matrix(matrix<T>&&) = default;
+	matrix(matrix<T>&) = default;
+	
+	static matrix<T>& kron(matrix<T>&, matrix<T>&);
+	T& operator()(size_t, size_t);
+	
 };
+
+
+//Constructors
+template<typename T>
+inline matrix<T>::matrix(size_t, size_t) : tensor<T, 2>{ {m, n} }
+{
+}
+
+template<typename T>
+inline matrix<T>& matrix<T>::kron(matrix<T>&, matrix<T>&)
+{
+	// TODO: hier return-Anweisung eingeben
+}
+
+//Access operator
+template<typename T>
+inline T& matrix<T>::operator()(size_t i, size_t j)
+{
+	assert(!data.empty());
+	typename std::list<T>::iterator it = data.begin();
+	std::advance(it, (i - 1) * shape_[1] + j - 1);
+	return *it;
+}

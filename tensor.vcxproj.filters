@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\exceptions">
+      <UniqueIdentifier>{274984a1-49c4-4a86-9c85-38765e346bea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -25,6 +28,15 @@
     </ClInclude>
     <ClInclude Include="include\vector.h">
       <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\matrix.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\operations.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\exceptions\exceptions.h">
+      <Filter>Headerdateien\exceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

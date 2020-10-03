@@ -23,18 +23,21 @@
 	public:
 		vector();
 		vector(size_t);
-		vector(const vector&) = default;
-		vector(vector&&) = default;
+		vector(const vector<T>&) = default;
+		vector(vector<T>&&) = default;
+
+
 
 		vector<T> operator+(const vector<T>&) const;
 		vector<T>& operator=(const vector<T>&);
-		//
-		T& at(size_t);
+		
+		T& operator()(size_t);
 
+		size_t size();
 		//Linear algebra functionality
 
 		T norm();
-		T dot();
+		T dot(vector<T>&, vector<T>&) const;
 		T norm_inf();
 
 
@@ -73,8 +76,9 @@
 		
 	}
 
+
 	template<typename T>
-	inline T& vector<T>::at(size_t i)
+	inline T& vector<T>::operator()(size_t i)
 	{
 		typename std::list<T>::iterator it = this->data.begin();
 		std::advance(it, i - 1);
@@ -82,7 +86,25 @@
 	}
 
 	template<typename T>
+	inline size_t vector<T>::size()
+	{
+		return this->data.size();
+	}
+
+	template<typename T>
 	inline T vector<T>::norm()
 	{
-		;
+		
+	}
+
+	template<typename T>
+	inline T vector<T>::dot(vector<T>& x, vector<T>& y) const
+	{
+		if (x.size() != y.size()) throw size_t;
+		T sum;
+		for (auto it = std::make_pair(x.data.begin(), y.data.end()); it.first != x.data.end(); ++it.first, ++it.second)
+		{
+			sum += (*it.first) * (*it.second);
+		}
+		return sum;
 	}
