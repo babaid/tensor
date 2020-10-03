@@ -17,8 +17,13 @@
 
 
 #pragma once
+#include "tensor.h"
 
-class matrix : private tensor
+template<typename T>
+class matrix : private tensor<T, 2>
 {
-
+	matrix() = deafult;
+	matrix(size_t, size_t);
+	matrix(matrix&&) = default;
+	matrix(matrix&) = default;
 };

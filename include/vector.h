@@ -24,12 +24,18 @@
 		vector();
 		vector(size_t);
 		vector(const vector&) = default;
+		vector(vector&&) = default;
+
 		vector<T> operator+(const vector<T>&) const;
 		vector<T>& operator=(const vector<T>&);
 		//
 		T& at(size_t);
-		/*T norm2();
-		T norm_inf();*/
+
+		//Linear algebra functionality
+
+		T norm();
+		T dot();
+		T norm_inf();
 
 
 	};
@@ -73,4 +79,10 @@
 		typename std::list<T>::iterator it = this->data.begin();
 		std::advance(it, i - 1);
 		return *it;
+	}
+
+	template<typename T>
+	inline T vector<T>::norm()
+	{
+		;
 	}
