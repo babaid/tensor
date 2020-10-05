@@ -54,12 +54,8 @@ namespace tensor_core {
 		SubArray& at(unsigned i) { return data.at(i); }
 	};
 
-/*The tensor_core multi_for loop helps to iterate over an arbitrary dimensional marray. One can use it in a similar way to marray:
-*	marray<int, 3, 3> mat; //3x3 array
-*	mfor<3,3>
-* multi_for<3, 3>(size_t i, size_t j)
-* 
-*/
+
+
 
 
 	
