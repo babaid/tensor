@@ -26,9 +26,6 @@
     <ClInclude Include="include\tensor.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="include\vector.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="include\matrix.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -37,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="include\exceptions\exceptions.h">
       <Filter>Headerdateien\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\t_vector.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tensor: tensor&lt; T, Dim &gt; Class Template Reference</title>
+<title>Dtensor: tensor&lt; T, Dimension &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Tensor
-   &#160;<span id="projectnumber">0.5</span>
+   <div id="projectname">Dtensor
    </div>
-   <div id="projectbrief">A tensor template library written in modern c++.</div>
+   <div id="projectbrief">A generic template library dealing with tensors.</div>
   </td>
  </tr>
  </tbody>
@@ -68,58 +67,165 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classtensor-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tensor&lt; T, Dim &gt; Class Template Reference</div>  </div>
+<div class="title">tensor&lt; T, Dimension &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for tensor&lt; T, Dim &gt;:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classtensor.png" usemap="#tensor_3C_20T_2C_20Dim_20_3E_map" alt=""/>
-  <map id="tensor_3C_20T_2C_20Dim_20_3E_map" name="tensor_3C_20T_2C_20Dim_20_3E_map">
-<area href="classmatrix.html" alt="matrix" shape="rect" coords="0,56,108,80"/>
-  </map>
-</div></div>
+
+<p><code>#include &lt;<a class="el" href="tensor_8h_source.html">tensor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1fe80f0b78e8950ebff0ebc13ce7e9f8"><td class="memItemLeft" align="right" valign="top"><a id="a1fe80f0b78e8950ebff0ebc13ce7e9f8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>tensor</b> (std::array&lt; size_t, Dim &gt;)</td></tr>
-<tr class="separator:a1fe80f0b78e8950ebff0ebc13ce7e9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa290697e286e2139fc632168f77f68e1"><td class="memItemLeft" align="right" valign="top"><a id="aa290697e286e2139fc632168f77f68e1"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt; &amp;)</td></tr>
-<tr class="separator:aa290697e286e2139fc632168f77f68e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae683a4300194cce191bcda761460a57d"><td class="memItemLeft" align="right" valign="top"><a id="ae683a4300194cce191bcda761460a57d"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt; &amp;) const</td></tr>
-<tr class="separator:ae683a4300194cce191bcda761460a57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1513b576afdb3873b262de86e0c43bd"><td class="memItemLeft" align="right" valign="top"><a id="ab1513b576afdb3873b262de86e0c43bd"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt; &amp;) const</td></tr>
-<tr class="separator:ab1513b576afdb3873b262de86e0c43bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6996da8345660ae48e14cb639f5a8bc8"><td class="memItemLeft" align="right" valign="top"><a id="a6996da8345660ae48e14cb639f5a8bc8"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const T &amp;) const</td></tr>
-<tr class="separator:a6996da8345660ae48e14cb639f5a8bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19a071076c46ca43fdc111b49a232d50"><td class="memItemLeft" align="right" valign="top"><a id="a19a071076c46ca43fdc111b49a232d50"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const T &amp;) const</td></tr>
-<tr class="separator:a19a071076c46ca43fdc111b49a232d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2243f307558476e98976685925ec9ec8"><td class="memItemLeft" align="right" valign="top"><a id="a2243f307558476e98976685925ec9ec8"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const T &amp;) const</td></tr>
-<tr class="separator:a2243f307558476e98976685925ec9ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2308b5b4de471e2154738724bad399c8"><td class="memItemLeft" align="right" valign="top"><a id="a2308b5b4de471e2154738724bad399c8"></a>
-virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator/</b> (const T &amp;) const</td></tr>
-<tr class="separator:a2308b5b4de471e2154738724bad399c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a779db1e80865787ab8eec5f53a6ef912"><td class="memItemLeft" align="right" valign="top"><a id="a779db1e80865787ab8eec5f53a6ef912"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const std::list&lt; T &gt; &amp;Right)</td></tr>
-<tr class="separator:a779db1e80865787ab8eec5f53a6ef912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66359821b33507481a5e52d16299c877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtensor.html#a66359821b33507481a5e52d16299c877">tensor</a> ()=default</td></tr>
+<tr class="separator:a66359821b33507481a5e52d16299c877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadbb50a086ac617abadbdb9a7f7d91fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtensor.html#aadbb50a086ac617abadbdb9a7f7d91fe">tensor</a> (<a class="el" href="structtensor__core_1_1marray.html">tensor_core::marray</a>&lt; T, Dimension... &gt;)</td></tr>
+<tr class="separator:aadbb50a086ac617abadbdb9a7f7d91fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee56a1d55d3436765d29d8a836a42319"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtensor.html#aee56a1d55d3436765d29d8a836a42319">operator=</a> (const <a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension... &gt; &amp;)</td></tr>
+<tr class="separator:aee56a1d55d3436765d29d8a836a42319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f6dec633dc1cd90b4d0bef7b282c05"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtensor.html#a58f6dec633dc1cd90b4d0bef7b282c05">~tensor</a> ()=default</td></tr>
+<tr class="separator:a58f6dec633dc1cd90b4d0bef7b282c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0950d8e4aa4a1e608bf7e60e655ad315"><td class="memItemLeft" align="right" valign="top"><a id="a0950d8e4aa4a1e608bf7e60e655ad315"></a>
-std::array&lt; size_t, Dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shape_</b></td></tr>
-<tr class="separator:a0950d8e4aa4a1e608bf7e60e655ad315"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed334cc94390b7f92c8939eabe79af4"><td class="memItemLeft" align="right" valign="top"><a id="abed334cc94390b7f92c8939eabe79af4"></a>
-std::list&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="separator:abed334cc94390b7f92c8939eabe79af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd10ff303bec2a926dfa8a247041978"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtensor__core_1_1marray.html">tensor_core::marray</a>&lt; T, Dimension... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtensor.html#a1fd10ff303bec2a926dfa8a247041978">_data</a></td></tr>
+<tr class="separator:a1fd10ff303bec2a926dfa8a247041978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a66359821b33507481a5e52d16299c877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66359821b33507481a5e52d16299c877">&#9670;&nbsp;</a></span>tensor() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t ... Dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension &gt;::<a class="el" href="classtensor.html">tensor</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadbb50a086ac617abadbdb9a7f7d91fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadbb50a086ac617abadbdb9a7f7d91fe">&#9670;&nbsp;</a></span>tensor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t ... Dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension &gt;::<a class="el" href="classtensor.html">tensor</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtensor__core_1_1marray.html">tensor_core::marray</a>&lt; T, Dimension... &gt;&#160;</td>
+          <td class="paramname"><em>base_array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58f6dec633dc1cd90b4d0bef7b282c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58f6dec633dc1cd90b4d0bef7b282c05">&#9670;&nbsp;</a></span>~tensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t ... Dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension &gt;::~<a class="el" href="classtensor.html">tensor</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aee56a1d55d3436765d29d8a836a42319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee56a1d55d3436765d29d8a836a42319">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t ... Dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension... &gt; &amp; <a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1fd10ff303bec2a926dfa8a247041978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd10ff303bec2a926dfa8a247041978">&#9670;&nbsp;</a></span>_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t ... Dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtensor__core_1_1marray.html">tensor_core::marray</a>&lt;T, Dimension...&gt; <a class="el" href="classtensor.html">tensor</a>&lt; T, Dimension &gt;::_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/debab/C++ projects/tensor/include/<a class="el" href="tensor_8h_source.html">tensor.h</a></li>
 </ul>

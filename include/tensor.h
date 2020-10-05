@@ -21,7 +21,8 @@
 #include<assert.h>
 #include<vector>
 
-/*Marray is the basic multi...Dimensionensional array structure wich is the base of all tensor objects. It is part of the tensor_core namespace
+
+/*Marray is the basic multidimensional array structure wich is the base of all tensor objects. It is part of the tensor_core namespace
 Based on Variadic templates and std::array;
 You can use it basically as the STL array container except it provides easy to use multi...Dimensionensional capabilitie1, ,2 ,3 s,.4, 5, 6},{7, 8, 9}
 The use of it:
@@ -29,29 +30,38 @@ The use of it:
 	tensor_core::<int, 3, 3> mat = {{1, ,2 ,3 },{4, 5, 6},{7, 8, 9}}; //creates a 3x3 raw matrix
 	mat[0][1] = 10; //element-access */
 namespace tensor_core {
-	template<typename T, unsigned ...Dimension> struct marray;
-	template<typename T, unsigned First>
+	template<typename T, size_t ...Dimension> struct marray;
+	template<typename T, size_t First>
 	struct marray <T, First>{
+
+		//typedef T type[First];
+		//type* data = new type;
+
+
 
 		//typedef T type[First];
 		//type data;
 		typedef typename std::array<T, First> ActualArray;
 		ActualArray data;
-		T& operator[](unsigned i) { return data[i]; }
-		T& at(unsigned i) { return data.at(i); }
+		T& operator[](size_t i) { return data[i]; }
+		T& at(size_t i) { return data.at(i); }
 
 	};
 
-	template<typename T, unsigned First, unsigned ...Last>
+	template<typename T, size_t First, size_t ...Last>
 	struct marray<T, First, Last...> {
 
 		
-		typedef typename marray<T, Last...>::ActualArray SubArray;
+		typedef typename marray<T, Last...> SubArray;
+		//typedef typename marray<T, Last...>::type SubArray;
+		
+		
 		//typedef SubArray type[First];
-		//type data;
+		//SubArray* data = new type;
+		
 		std::array<SubArray, First> data;
-		SubArray& operator[](unsigned i) { return data[i]; }
-		SubArray& at(unsigned i) { return data.at(i); }
+		SubArray& operator[](size_t i) { return data[i]; }
+		SubArray& at(size_t i) { return data.at(i); }
 	};
 
 
@@ -61,9 +71,18 @@ namespace tensor_core {
 	
 
 }
+namespace dtensor {
 
-template<typename T, size_t ...Dimension> class tensor;
-
+	template<typename T, size_t ...Dimension> class tensor;
+	/*Tensor is the base of all tensor-like objects such us matrices, vectors, or higher dimensional types.
+	*The use of tensor is pretty simple:
+	*	tensor<double, 2, 2, 2> tens; //A 3D tensor with size 2x2x2
+	*
+	* I still need to implement a loop wich iterates over every element of a tensor.
+	I have to decide between a variadic template with recursion, or maybe something simpler such as the help of a counter vector.
+	*
+	*
+	*/
 	template<typename T, size_t ...Dimension>
 	class tensor
 	{
@@ -81,21 +100,20 @@ template<typename T, size_t ...Dimension> class tensor;
 		virtual	tensor<T,Dimension...> operator-(const T&) const;
 		virtual tensor<T, Dimension...> operator*(const T&) const;
 		virtual tensor<T, Dimension...> operator/(const T&) const;
-		//It is possible to pass a list to a tensor, right now you may have to reshape it afterwards TODO
-		
+
 		*/
-		
-	protected:		
-		tensor_core::marray<T, Dimension...> _data;	
+
+	protected:
+		tensor_core::marray<T, Dimension...> _data;
 	private:
 		std::vector<size_t> dimensions{ Dimension... };
 
 	};
-	
-	
 
 
-	
+
+
+
 
 
 	template<typename T, size_t ...Dimension>
@@ -103,15 +121,15 @@ template<typename T, size_t ...Dimension> class tensor;
 	{
 
 	}
-	
+
 	template<typename T, size_t ...Dimension>
-	inline tensor<T,Dimension...> & tensor<T, Dimension...>::operator=(const tensor<T, Dimension...>& rval)
+	inline tensor<T, Dimension...>& tensor<T, Dimension...>::operator=(const tensor<T, Dimension...>& rval)
 	{
 		tensor<T, Dimension...> temp;
 		temp._data = rval._data;
 		return temp;
-		
+
 	}
 
-	
-	
+
+}

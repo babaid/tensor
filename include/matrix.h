@@ -20,7 +20,14 @@
 #include "tensor.h"
 #include "exceptions/exceptions.h"
 
-
+/*matrix is the type of matrices, matrix is an element of the namespace dtensor.
+*
+* Just like the tensor objects, it has a very similar syntax:
+*	dtensor::matrix<double, 2, 4> mat; //An uninitilized 2x4 matrix.
+* 
+* The dtensor namespace also contains a huge amount of functions dealing with matrices. Or at least it will.
+* TODO: kronecker prod. for matrices, various norms, different initializing functions like Rand({range...}), Zeros(), Diag({args...})
+*/
 template<typename T, size_t M, size_t N>
 class matrix : public tensor<T, M, N>
 {
@@ -37,11 +44,10 @@ class matrix : public tensor<T, M, N>
 	T& operator()(size_t, size_t);
 	//matrix<T> kron(matrix<T>&, matrix<T>&) override;
 
-	//void zeros();
+
 };
 
 
-//Constructors
 
 
 
@@ -49,17 +55,6 @@ class matrix : public tensor<T, M, N>
 
 
 
-/*
-template<typename T>
-inline matrix<T> matrix<T>::kron(matrix<T>& A, matrix<T>& B)
-{
-	matrix<matrix<T>> mat_ent;
-
-	
-	return matrix<T>();
-}
-
-*/
 
 template<typename T, size_t M, size_t N>
 inline T& matrix<T, M, N>::operator[](size_t a)

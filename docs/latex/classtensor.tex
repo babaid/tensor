@@ -1,52 +1,71 @@
-\hypertarget{classtensor}{}\doxysection{tensor$<$ T, Dim $>$ Class Template Reference}
-\label{classtensor}\index{tensor$<$ T, Dim $>$@{tensor$<$ T, Dim $>$}}
-Inheritance diagram for tensor$<$ T, Dim $>$\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classtensor}
-\end{center}
-\end{figure}
+\hypertarget{classtensor}{}\doxysection{tensor$<$ T, Dimension $>$ Class Template Reference}
+\label{classtensor}\index{tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}}
+
+
+{\ttfamily \#include $<$tensor.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtensor_a1fe80f0b78e8950ebff0ebc13ce7e9f8}\label{classtensor_a1fe80f0b78e8950ebff0ebc13ce7e9f8}} 
-{\bfseries tensor} (std\+::array$<$ size\+\_\+t, Dim $>$)
+\mbox{\hyperlink{classtensor_a66359821b33507481a5e52d16299c877}{tensor}} ()=default
 \item 
-\mbox{\Hypertarget{classtensor_aa290697e286e2139fc632168f77f68e1}\label{classtensor_aa290697e286e2139fc632168f77f68e1}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ \&)
+\mbox{\hyperlink{classtensor_aadbb50a086ac617abadbdb9a7f7d91fe}{tensor}} (\mbox{\hyperlink{structtensor__core_1_1marray}{tensor\+\_\+core\+::marray}}$<$ T, Dimension... $>$)
 \item 
-\mbox{\Hypertarget{classtensor_ae683a4300194cce191bcda761460a57d}\label{classtensor_ae683a4300194cce191bcda761460a57d}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ {\bfseries operator+} (const \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ \&) const
+virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension... $>$ \& \mbox{\hyperlink{classtensor_aee56a1d55d3436765d29d8a836a42319}{operator=}} (const \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension... $>$ \&)
 \item 
-\mbox{\Hypertarget{classtensor_ab1513b576afdb3873b262de86e0c43bd}\label{classtensor_ab1513b576afdb3873b262de86e0c43bd}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ {\bfseries operator-\/} (const \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ \&) const
-\item 
-\mbox{\Hypertarget{classtensor_a6996da8345660ae48e14cb639f5a8bc8}\label{classtensor_a6996da8345660ae48e14cb639f5a8bc8}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ {\bfseries operator+} (const T \&) const
-\item 
-\mbox{\Hypertarget{classtensor_a19a071076c46ca43fdc111b49a232d50}\label{classtensor_a19a071076c46ca43fdc111b49a232d50}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ {\bfseries operator-\/} (const T \&) const
-\item 
-\mbox{\Hypertarget{classtensor_a2243f307558476e98976685925ec9ec8}\label{classtensor_a2243f307558476e98976685925ec9ec8}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ {\bfseries operator$\ast$} (const T \&) const
-\item 
-\mbox{\Hypertarget{classtensor_a2308b5b4de471e2154738724bad399c8}\label{classtensor_a2308b5b4de471e2154738724bad399c8}} 
-virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dim $>$ {\bfseries operator/} (const T \&) const
-\item 
-\mbox{\Hypertarget{classtensor_a779db1e80865787ab8eec5f53a6ef912}\label{classtensor_a779db1e80865787ab8eec5f53a6ef912}} 
-virtual void {\bfseries operator=} (const std\+::list$<$ T $>$ \&Right)
+virtual \mbox{\hyperlink{classtensor_a58f6dec633dc1cd90b4d0bef7b282c05}{$\sim$tensor}} ()=default
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtensor_a0950d8e4aa4a1e608bf7e60e655ad315}\label{classtensor_a0950d8e4aa4a1e608bf7e60e655ad315}} 
-std\+::array$<$ size\+\_\+t, Dim $>$ {\bfseries shape\+\_\+}
-\item 
-\mbox{\Hypertarget{classtensor_abed334cc94390b7f92c8939eabe79af4}\label{classtensor_abed334cc94390b7f92c8939eabe79af4}} 
-std\+::list$<$ T $>$ {\bfseries data}
+\mbox{\hyperlink{structtensor__core_1_1marray}{tensor\+\_\+core\+::marray}}$<$ T, Dimension... $>$ \mbox{\hyperlink{classtensor_a1fd10ff303bec2a926dfa8a247041978}{\+\_\+data}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtensor_a66359821b33507481a5e52d16299c877}\label{classtensor_a66359821b33507481a5e52d16299c877}} 
+\index{tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}!tensor@{tensor}}
+\index{tensor@{tensor}!tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{tensor()}{tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t ... Dimension$>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension $>$\+::\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classtensor_aadbb50a086ac617abadbdb9a7f7d91fe}\label{classtensor_aadbb50a086ac617abadbdb9a7f7d91fe}} 
+\index{tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}!tensor@{tensor}}
+\index{tensor@{tensor}!tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{tensor()}{tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t ... Dimension$>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension $>$\+::\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtensor__core_1_1marray}{tensor\+\_\+core\+::marray}}$<$ T, Dimension... $>$}]{base\+\_\+array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_a58f6dec633dc1cd90b4d0bef7b282c05}\label{classtensor_a58f6dec633dc1cd90b4d0bef7b282c05}} 
+\index{tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}!````~tensor@{$\sim$tensor}}
+\index{````~tensor@{$\sim$tensor}!tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$tensor()}{~tensor()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t ... Dimension$>$ \\
+virtual \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension $>$\+::$\sim$\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtensor_aee56a1d55d3436765d29d8a836a42319}\label{classtensor_aee56a1d55d3436765d29d8a836a42319}} 
+\index{tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t ... Dimension$>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension... $>$ \& \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension... $>$ \&}]{rval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtensor_a1fd10ff303bec2a926dfa8a247041978}\label{classtensor_a1fd10ff303bec2a926dfa8a247041978}} 
+\index{tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}!\_data@{\_data}}
+\index{\_data@{\_data}!tensor$<$ T, Dimension $>$@{tensor$<$ T, Dimension $>$}}
+\doxysubsubsection{\texorpdfstring{\_data}{\_data}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t ... Dimension$>$ \\
+\mbox{\hyperlink{structtensor__core_1_1marray}{tensor\+\_\+core\+::marray}}$<$T, Dimension...$>$ \mbox{\hyperlink{classtensor}{tensor}}$<$ T, Dimension $>$\+::\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/debab/\+C++ projects/tensor/include/tensor.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/debab/\+C++ projects/tensor/include/\mbox{\hyperlink{tensor_8h}{tensor.\+h}}\end{DoxyCompactItemize}

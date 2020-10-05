@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tensor: Member List</title>
+<title>Dtensor: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Tensor
-   &#160;<span id="projectnumber">0.5</span>
+   <div id="projectname">Dtensor
    </div>
-   <div id="projectbrief">A tensor template library written in modern c++.</div>
+   <div id="projectbrief">A generic template library dealing with tensors.</div>
   </td>
  </tr>
  </tbody>
@@ -64,12 +63,25 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">matrix Member List</div>  </div>
+<div class="title">matrix&lt; T, M, N &gt; Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classmatrix.html">matrix</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classtensor.html#a1fd10ff303bec2a926dfa8a247041978">_data</a></td><td class="entry"><a class="el" href="classtensor.html">tensor&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmatrix.html#acf994b9e395ab96397dc1c635d565b8d">matrix</a>()=default</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmatrix.html#a33fd49052b119977fda7592e0c973985">matrix</a>(tensor_core::marray&lt; T, M, N &gt; mat)</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmatrix.html#ac60dc71fa9031011862e3f72f2f570b1">matrix</a>(matrix&lt; T, M, N &gt; &amp;&amp;)=default</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmatrix.html#aef2762b9af40badd20abc837f90a02eb">matrix</a>(matrix&lt; T, M, N &gt; &amp;)=default</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmatrix.html#a490688628c76c8fb3e8117a02415f790">operator()</a>(size_t, size_t)</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtensor.html#aee56a1d55d3436765d29d8a836a42319">operator=</a>(const tensor&lt; T, Dimension... &gt; &amp;)</td><td class="entry"><a class="el" href="classtensor.html">tensor&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmatrix.html#a596e078b0cae850ec580224c32c87273">operator[]</a>(size_t)</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtensor.html#a66359821b33507481a5e52d16299c877">tensor</a>()=default</td><td class="entry"><a class="el" href="classtensor.html">tensor&lt; T, M, N &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classtensor.html#aadbb50a086ac617abadbdb9a7f7d91fe">tensor</a>(tensor_core::marray&lt; T, Dimension... &gt;)</td><td class="entry"><a class="el" href="classtensor.html">tensor&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmatrix.html#ae151cb58ba8210662490b5e5ca129d6a">~matrix</a>()=default</td><td class="entry"><a class="el" href="classmatrix.html">matrix&lt; T, M, N &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classtensor.html#a58f6dec633dc1cd90b4d0bef7b282c05">~tensor</a>()=default</td><td class="entry"><a class="el" href="classtensor.html">tensor&lt; T, M, N &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

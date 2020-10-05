@@ -1,27 +1,22 @@
-#include "include/matrix.h"
+#include "include/t_vector.h"
 #include<iostream>
 using namespace tensor_core;
 
 int main()
 {
-	
-	marray<int, 2, 2> x;
-	int cnt = 1;
-	for (int i = 0; i < 2; ++i)
-	{
-		for (int j = 0; j < 2; ++j)
-		{
-			x[i][j] = cnt;
-			cnt++;
-		}
-	}
-	marray<int, 1, 10> a;
-	matrix<int, 2, 2> b(x);
 	try {
-		std::cout << b[5];
+		dtensor::vector<int, 2> a;
+		a(1) = 1;
+		a(2) = 2;
+		dtensor::vector<int, 4> b = dtensor::kron(a, a);
+		for (size_t i = 1; i <= 4; ++i) std::cout << b(i) << std::endl;
+		
+	
 	}
+	
 	catch (std::out_of_range& orr)
 	{
-		std::cout  << orr.what();
+		std::cout << orr.what();
 	}
+	
 }

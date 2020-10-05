@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['matrix_0',['matrix',['../classmatrix.html',1,'']]]
+  ['_5fdata_0',['_data',['../classtensor.html#a1fd10ff303bec2a926dfa8a247041978',1,'tensor']]],
+  ['_5fva_1',['_VA',['../classdtensor_1_1vector.html#a43c0fa7330e64d3bba31c27c135d990e',1,'dtensor::vector']]]
 ];

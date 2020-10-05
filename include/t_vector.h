@@ -15,33 +15,73 @@
  *************************************************************************************/
 #pragma once
 #include "tensor.h"
-enum class VectorAlign {
-	Col, Row	
-};
 
+enum class VectorAlign {
+	Col, Row
+};
+namespace dtensor{
 	template<typename T, size_t N>
-	class vector : public tensor<T, 1, N>
+	class vector : public tensor<T, N>
 	{
 	public:
-		vector() = default;
-		vector(tensor_core::marray<T, 1, N> v) :_VA(0), tensor<T, 1, N>{v} {};
-		vector(tensor_core::marray<T, N, 1> v) :_VA(1), tensor<T, N, 1>{v} {};
-		vector(const vector<T>&) = default;
-		vector(vector<T>&&) = default;
+		vector() noexcept = default;
+		vector(tensor_core::marray<T, N> v) :_VA(VectorAlign::Col), tensor<T, N>{v} {};
+		vector(const vector<T, N>&) = default;
+		vector(vector<T, N>&& lval) noexcept = default;
 		~vector() = default;
 
-		vector<T> operator+(const vector<T>&) const;
-		vector<T>& operator=(const vector<T>&);		
+		vector<T, N> operator+(const vector<T, N>&) const;
+		vector<T, N>& operator=(const vector<T, N>&);
+
+		T operator*(const vector<T, N>&) const;
 		T& operator()(size_t);
-		size_t size();
+		
 
 		//Linear algebra functionality
 
-		T norm();
-		T dot(vector<T>&, vector<T>&) const;	
-		vector<T> kron(const vector<T>&, const vector<T>&) override;
+		
 	protected:
 		VectorAlign _VA;
 	};
 
+	template<typename T, size_t N>
+	inline vector<T, N> vector<T, N>::operator+(const vector<T, N>& rval) const
+	{
+		vector<T, N> temp = rval;
+		for (size_t i = 0; i < N; ++i)
+		{
+			temp._data[i] += this->_data[i];
+		}
+		return temp;
+	}
+
+	template<typename T, size_t N>
+	inline T vector<T, N>::operator*(const vector<T, N>& lval) const
+	{
+		T sum=0;
+		for (size_t i = 0; i < N; ++i) sum += this->_data[i] * lval._data[i];
+		return sum;
+	}
+
+	template<typename T, size_t N>
+	inline T& vector<T, N>::operator()(size_t i)
+	{
+		return this->_data[i-1];
+	}
 	
+	
+	template<typename T, size_t P, size_t Q>
+	vector<T, P* Q> kron(vector<T, P>& a, vector<T, Q>& b) {
+		vector<T, P* Q> temp;	
+		size_t cnt = 1;
+		for (size_t i = 1; i <= P ; ++i)
+		{
+			for (size_t j = 1; j <= Q; ++j)
+			{
+				temp(cnt) = a(i) * b(j);
+				++cnt;
+			}
+		}
+		return temp;
+	}
+}

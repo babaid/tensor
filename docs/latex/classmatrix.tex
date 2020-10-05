@@ -1,13 +1,90 @@
-\hypertarget{classmatrix}{}\doxysection{matrix Class Reference}
-\label{classmatrix}\index{matrix@{matrix}}
-Inheritance diagram for matrix\+:\begin{figure}[H]
+\hypertarget{classmatrix}{}\doxysection{matrix$<$ T, M, N $>$ Class Template Reference}
+\label{classmatrix}\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+
+
+{\ttfamily \#include $<$matrix.\+h$>$}
+
+Inheritance diagram for matrix$<$ T, M, N $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classmatrix}
 \end{center}
 \end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmatrix_acf994b9e395ab96397dc1c635d565b8d}{matrix}} ()=default
+\item 
+\mbox{\hyperlink{classmatrix_a33fd49052b119977fda7592e0c973985}{matrix}} (\mbox{\hyperlink{structtensor__core_1_1marray}{tensor\+\_\+core\+::marray}}$<$ T, M, N $>$ mat)
+\item 
+\mbox{\hyperlink{classmatrix_ac60dc71fa9031011862e3f72f2f570b1}{matrix}} (\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$ \&\&)=default
+\item 
+\mbox{\hyperlink{classmatrix_aef2762b9af40badd20abc837f90a02eb}{matrix}} (\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$ \&)=default
+\item 
+\mbox{\hyperlink{classmatrix_ae151cb58ba8210662490b5e5ca129d6a}{$\sim$matrix}} ()=default
+\item 
+T \& \mbox{\hyperlink{classmatrix_a596e078b0cae850ec580224c32c87273}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t)
+\item 
+T \& \mbox{\hyperlink{classmatrix_a490688628c76c8fb3e8117a02415f790}{operator()}} (size\+\_\+t, size\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatrix_acf994b9e395ab96397dc1c635d565b8d}\label{classmatrix_acf994b9e395ab96397dc1c635d565b8d}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::\mbox{\hyperlink{classmatrix}{matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classmatrix_a33fd49052b119977fda7592e0c973985}\label{classmatrix_a33fd49052b119977fda7592e0c973985}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::\mbox{\hyperlink{classmatrix}{matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtensor__core_1_1marray}{tensor\+\_\+core\+::marray}}$<$ T, M, N $>$}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmatrix_ac60dc71fa9031011862e3f72f2f570b1}\label{classmatrix_ac60dc71fa9031011862e3f72f2f570b1}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::\mbox{\hyperlink{classmatrix}{matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classmatrix_aef2762b9af40badd20abc837f90a02eb}\label{classmatrix_aef2762b9af40badd20abc837f90a02eb}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::\mbox{\hyperlink{classmatrix}{matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classmatrix_ae151cb58ba8210662490b5e5ca129d6a}\label{classmatrix_ae151cb58ba8210662490b5e5ca129d6a}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!````~matrix@{$\sim$matrix}}
+\index{````~matrix@{$\sim$matrix}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$matrix()}{~matrix()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::$\sim$\mbox{\hyperlink{classmatrix}{matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatrix_a490688628c76c8fb3e8117a02415f790}\label{classmatrix_a490688628c76c8fb3e8117a02415f790}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+T \& \mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmatrix_a596e078b0cae850ec580224c32c87273}\label{classmatrix_a596e078b0cae850ec580224c32c87273}} 
+\index{matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!matrix$<$ T, M, N $>$@{matrix$<$ T, M, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t M, size\+\_\+t N$>$ \\
+T \& \mbox{\hyperlink{classmatrix}{matrix}}$<$ T, M, N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/debab/\+C++ projects/tensor/include/matrix.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/debab/\+C++ projects/tensor/include/\mbox{\hyperlink{matrix_8h}{matrix.\+h}}\end{DoxyCompactItemize}

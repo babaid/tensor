@@ -147,7 +147,7 @@
     <ClInclude Include="include\matrix.h" />
     <ClInclude Include="include\operations.h" />
     <ClInclude Include="include\tensor.h" />
-    <ClInclude Include="include\vector.h" />
+    <ClInclude Include="include\t_vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
