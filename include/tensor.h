@@ -17,179 +17,105 @@
 #pragma once
 
 #include<array>
-#include<list>
 #include<iostream>
 #include<assert.h>
+#include<vector>
+
+/*Marray is the basic multi...Dimensionensional array structure wich is the base of all tensor objects. It is part of the tensor_core namespace
+Based on Variadic templates and std::array;
+You can use it basically as the STL array container except it provides easy to use multi...Dimensionensional capabilitie1, ,2 ,3 s,.4, 5, 6},{7, 8, 9}
+The use of it:
+	
+	tensor_core::<int, 3, 3> mat = {{1, ,2 ,3 },{4, 5, 6},{7, 8, 9}}; //creates a 3x3 raw matrix
+	mat[0][1] = 10; //element-access */
+namespace tensor_core {
+	template<typename T, unsigned ...Dimension> struct marray;
+	template<typename T, unsigned First>
+	struct marray <T, First>{
+
+		//typedef T type[First];
+		//type data;
+		typedef typename std::array<T, First> ActualArray;
+		ActualArray data;
+		T& operator[](unsigned i) { return data[i]; }
+		T& at(unsigned i) { return data.at(i); }
+
+	};
+
+	template<typename T, unsigned First, unsigned ...Last>
+	struct marray<T, First, Last...> {
+
+		
+		typedef typename marray<T, Last...>::ActualArray SubArray;
+		//typedef SubArray type[First];
+		//type data;
+		std::array<SubArray, First> data;
+		SubArray& operator[](unsigned i) { return data[i]; }
+		SubArray& at(unsigned i) { return data.at(i); }
+	};
+
+/*The tensor_core multi_for loop helps to iterate over an arbitrary dimensional marray. One can use it in a similar way to marray:
+*	marray<int, 3, 3> mat; //3x3 array
+*	mfor<3,3>
+* multi_for<3, 3>(size_t i, size_t j)
+* 
+*/
 
 
+	
 
-	template<typename T, size_t Dim>
+}
+
+template<typename T, size_t ...Dimension> class tensor;
+
+	template<typename T, size_t ...Dimension>
 	class tensor
 	{
 	public:
 		tensor() = default;
-		tensor(std::array<size_t, Dim>);
-		
-		virtual tensor<T, Dim>& operator=(const tensor<T, Dim>&);
+		tensor(tensor_core::marray<T, Dimension...>);
+		virtual tensor<T, Dimension...>& operator=(const tensor<T, Dimension...>&);
 		virtual ~tensor() = default;
 
-		//Set certain properties
-		
-
-		//Element acces to 2-Dim and 3-Dim tensors
-		/*
-		virtual T& at(size_t) = 0;
-		virtual  T& at(size_t, size_t);
-		virtual  T& at(size_t, size_t, size_t);*/
-
-		//Get data
-		
-
-		//Get to see something
-		
-
-		//Tensor operators
-		virtual tensor<T, Dim> operator+(const tensor<T, Dim>&) const;
-		virtual tensor<T, Dim> operator-(const tensor<T, Dim>&) const;
-		//virtual tensor<T, Dim> operator*(const tensor<T, Dim>&) const;
-
+		/*//Tensor operators
+		virtual tensor<T,Dimension...> operator+(const tensor<T, Dimension...>&) const;
+		virtual tensor<T, Dimension...> operator-(const tensor<T, Dimension...>&) const;
 		//Element-wise operators
-		virtual tensor<T, Dim> operator+(const T&) const;
-		virtual	tensor<T, Dim> operator-(const T&) const;
-		virtual tensor<T, Dim> operator*(const T&) const;
-		virtual tensor<T, Dim> operator/(const T&) const;
-
+		virtual tensor<T,Dimension...> operator+(const T&) const;
+		virtual	tensor<T,Dimension...> operator-(const T&) const;
+		virtual tensor<T, Dimension...> operator*(const T&) const;
+		virtual tensor<T, Dimension...> operator/(const T&) const;
 		//It is possible to pass a list to a tensor, right now you may have to reshape it afterwards TODO
-		virtual void operator=(const std::list<T>& Right);
-
-
-		//Linear algebra operations
-		/*virtual void transpose();
-		virtual void transposec();
-		virtual T norm2();
-		virtual T norm_inf();*/
-
 		
+		*/
 		
-
-
-	protected:
-		
-		//Shape of the tensor and the data stored in it.
-		std::array<size_t, Dim> shape_;
-		std::list<T> data;
+	protected:		
+		tensor_core::marray<T, Dimension...> _data;	
+	private:
+		std::vector<size_t> dimensions{ Dimension... };
 
 	};
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim>::tensor(std::array<size_t, Dim> shape) :shape_(shape)
-	{
-		for (int i = 0; i < 10; ++i) data.push_back(i);
-	}
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim>& tensor<T, Dim>::operator=(const tensor<T, Dim>& rhs)
-	{
-		//assert the shapes
-		this->data = rhs.data;
-		this->shape_ = rhs.shape_;
-		return *this;
-	}
-
-	template<typename T, size_t Dim>
-	inline void tensor<T, Dim>::operator=(const std::list<T>& Right)
-	{
-
-		if (Right.size() != this->data.size())
-			assert(Right.size());
-		else {
-			this->data = Right;
-		}
-
-
-
-	}
-
+	
+	
 
 
 	
 
-	/*
+
+	template<typename T, size_t ...Dimension>
+	inline tensor<T, Dimension...>::tensor(tensor_core::marray<T, Dimension...> base_array) : _data(base_array)
+	{
+
+	}
 	
-	template<typename T, size_t Dim>
-	inline  T& tensor<T, Dim>::at(size_t i, size_t j, size_t k)
+	template<typename T, size_t ...Dimension>
+	inline tensor<T,Dimension...> & tensor<T, Dimension...>::operator=(const tensor<T, Dimension...>& rval)
 	{
-		assert(Dim == 3);
-		typename std::list<T>::iterator it = data.begin();
-		std::advance(it, (k - 1) * shape_[0] * shape_[1] + shape_[1] * (i - 1) + j - 1);
-		return (*it);
-	}
-	*/
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator+(const tensor<T, Dim>& right) const
-	{
-		tensor<T, Dim> temp = *this;
-		assert(shape_ == right.shape_);
-
-		for (auto elem = std::make_pair(temp.data.begin(), right.data.begin()); elem.first != temp.data.end(); ++elem.first, ++elem.second)
-		{
-			*elem.first += *elem.second;
-		}
-
+		tensor<T, Dimension...> temp;
+		temp._data = rval._data;
 		return temp;
+		
 	}
 
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator-(const tensor<T, Dim>& right) const
-	{
-		tensor<T, Dim> temp = *this;
-		assert(shape_ == right.shape_);
-
-		for (auto elem = std::make_pair(temp.data.begin(), right.data.begin()); elem.first != temp.data.end(); ++elem.first, ++elem.second)
-		{
-			*elem.first -= *elem.second;
-		}
-
-		return temp;
-	}
-
-
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator+(const T& val) const
-	{
-		tensor<T, Dim> temp = *this;
-		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
-			*elem += val;
-		return temp;
-	}
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator-(const T& val) const
-	{
-		tensor<T, Dim> temp = *this;
-		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
-			*elem -= val;
-		return temp;
-	}
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator*(const T& val) const
-	{
-		tensor<T, Dim> temp = *this;
-		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
-			*elem *= val;
-		return temp;
-	}
-
-	template<typename T, size_t Dim>
-	inline tensor<T, Dim> tensor<T, Dim>::operator/(const T& val) const
-	{
-		tensor<T, Dim> temp = *this;
-		for (auto elem = temp.data.begin(); elem != temp.data.end(); ++elem)
-			*elem /= val;
-		return temp;
-	}
-
-
+	
+	

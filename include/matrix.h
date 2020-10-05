@@ -18,41 +18,71 @@
 
 #pragma once
 #include "tensor.h"
+#include "exceptions/exceptions.h"
 
 
-template<typename T>
-class matrix : public tensor<T, 2>
+template<typename T, size_t M, size_t N>
+class matrix : public tensor<T, M, N>
 {
 	public:
 	matrix() = default;
-	matrix(size_t, size_t);
-	matrix(matrix<T>&&) = default;
-	matrix(matrix<T>&) = default;
+	matrix(tensor_core::marray <T, M, N> mat):tensor<T, M, N>{mat} {}
+	matrix(matrix<T, M, N>&&) = default;
+	matrix(matrix<T, M, N>&) = default;
+	~matrix() = default;
+
 	
-	static matrix<T>& kron(matrix<T>&, matrix<T>&);
+
+	T& operator[](size_t);
 	T& operator()(size_t, size_t);
-	
+	//matrix<T> kron(matrix<T>&, matrix<T>&) override;
+
+	//void zeros();
 };
 
 
 //Constructors
+
+
+
+
+
+
+
+/*
 template<typename T>
-inline matrix<T>::matrix(size_t, size_t) : tensor<T, 2>{ {m, n} }
+inline matrix<T> matrix<T>::kron(matrix<T>& A, matrix<T>& B)
 {
+	matrix<matrix<T>> mat_ent;
+
+	
+	return matrix<T>();
 }
 
-template<typename T>
-inline matrix<T>& matrix<T>::kron(matrix<T>&, matrix<T>&)
+*/
+
+template<typename T, size_t M, size_t N>
+inline T& matrix<T, M, N>::operator[](size_t a)
 {
+	if (a > M * N) throw(std::out_of_range("Out_of_range: You tried to access a matrix of size M*N. Index was out of range."));
+	size_t cnt = 0; 
+	for (size_t i = 0; i < M; ++i)
+	{
+		for (size_t j = 0; j < N; ++j)
+		{
+			++cnt;
+			if (cnt == a) return this->_data[i][j];
+			else continue;
+		}
+	}
+	
+}
+template<typename T, size_t M, size_t N>
+inline T& matrix<T, M, N>::operator()(size_t i, size_t j)
+{
+	if (i > M || j > N || i == 0 || j == 0) throw(std::out_of_range("Out_of_range: Your indices are out of Range. Pay attention to the dimensions of your matrix."));
+	
+	
+	return this->_data[i-1][j-1];
 	// TODO: hier return-Anweisung eingeben
-}
-
-//Access operator
-template<typename T>
-inline T& matrix<T>::operator()(size_t i, size_t j)
-{
-	assert(!data.empty());
-	typename std::list<T>::iterator it = data.begin();
-	std::advance(it, (i - 1) * shape_[1] + j - 1);
-	return *it;
 }

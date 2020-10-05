@@ -4,11 +4,13 @@
 #include "matrix.h"
 
 template<typename T>
-class operations
+struct operations
 {
-public:
+
 	operations() = default;
-	~operations() = 
-	static T dot(vector<T>&, vector<T>&);
+	~operations() = default;
+
+	
 
 };
+
